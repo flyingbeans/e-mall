@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuConfig>
+	<Displayers>
+		<Displayer name="Velocity" type="net.sf.navigator.displayer.VelocityMenuDisplayer"/>
+	</Displayers>
+	<Menus>
+		
+        <Menu name="MainMenu" title="首页" page="/shop/mainMenu.jsp" />
+        <Menu name="ItemMgmtMenu" title="商品管理" page="/brand/toItemIndex.do" />
+        <!-- 辽宁2期屏蔽该功能 -->
+        <!-- <Menu name="SimCardMgmtMenu" title="号卡管理" page="/shop/simcard/index.jsp" /> -->
+        <Menu name="OrderMgmtMenu" title="订单管理" page="/order/toOrderIndex.do" />
+        <Menu name="ValetOrderMgmtMenu" title="代客下单" page="/shop/valetorder/index.jsp" />
+        <Menu name="EbPtlUserMgmtMenu" title="会员管理" page="/shop/ptlUser/index.jsp" />
+        <Menu name="RelationShipMgmtMenu" title="合作伙伴管理" page="/shop/relational/index.jsp"  />
+        <Menu name="PaymentMgmtMenu" title="支付管理" page="/shop/payment/index.jsp" />
+        <Menu name="AdvertisementMenu" title="广告管理" page="/shop/advertisement/index.jsp" />
+        <!-- 辽宁2期屏蔽该功能 -->
+        <!-- <Menu name="PromotionMenu" title="促销活动" page="/shop/promotion/index.jsp" /> -->
+        <Menu name="SystemSet" title="系统配置" page="/shop/contentset/index.jsp" />
+        <Menu name="permission" title="权限管理" page="/shop/permission/index.jsp" />
+		<Menu name="reportMenu" title="报表管理" page="/shop/report/index.jsp" />
+        <Menu name="Logout" title="退出" page="/shop/logout" />
+		
+		<Menu name="PMS-CHANNEL" title="栏目管理" page="/pms/frame/channel/main.jsp" />
+		<Menu name="PMS-CONTENT" title="内容管理" page="/pms/frame/content/main.jsp" />
+		<Menu name="PMS-PUBLISH" title="静态发布" page="/pms/frame/generate/main.jsp" />
+		<Menu name="PMS-TEMPLATE" title="模版管理" page="/pms/frame/template/main.jsp" />
+		<Menu name="PMS-SYSTEM" title="PMS管理" page="/pms/frame/system/main.jsp" />
+		
+		<Menu name="SAMPLE-LOGIN" title="APP-LOGIN" page="/sample/login.jsp" />
+		<Menu name="SAMPLE-INDEX" title="mainMenu.title" page="/sample/index.jsp" />
+      
+	</Menus>
+</MenuConfig>

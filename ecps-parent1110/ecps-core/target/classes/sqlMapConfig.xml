@@ -1,0 +1,22 @@
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	
+	<mappers>
+		<mapper resource="com/sihai/ecps/sqlMap/EbBrandMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbItemMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbFeatureMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbItemClobMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbParaValueMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbSkuMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbSpecValueMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbConsoleLogMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/TsPtlUserMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbShipAddrMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbOrderMapper.xml"/>
+		<mapper resource="com/sihai/ecps/sqlMap/EbOrderDetailMapper.xml"/>
+	</mappers>
+
+</configuration>

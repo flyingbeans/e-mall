@@ -1,0 +1,66 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="http://www.asiainfo-linkage.com/" />
+<meta name="copyright" content="asiainfo-linkage.com 版权所有，未经授权禁止链接、复制或建立镜像。" />
+<meta name="description" content="中国移动通信 name.com"/>
+<meta name="keywords" content="中国移动通信 name.com"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=1.0"/>
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+<title>手机商城_移动商城_中国移动通信</title>
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="search" type="application/opensearchdescription+xml" href="../opensearch.xml" title="移动购物" />
+<link rel="stylesheet" href="../../res/css/blue.css" />
+<script src="../../res/js/jquery.js"></script>
+<script src="../../res/js/com.js"></script>
+</head>
+<body class="iframeL">
+
+<ul class="uls form">
+	<li id="loginAlertError" class="errorTip" style="display:none"></li>
+	<li>
+		<label>手机号码：</label>
+		<span class="bg_text">
+			<input type="text" maxlength="50" vld="{required:true}" name="loginUserName" id="loginUserName" reg1="^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$" desc="用户名长度不超过50个，必须是邮箱格式！" />
+			<em id="userNameLabel" class="def">请输入手机号码</em>
+		</span>
+	</li>
+	<li>
+		<label>登录模式：</label>
+		<dl class="bg_text" style="z-index:2">
+			<dd class="hidden">
+				<a href="javascript:void(0);" rel="#servicePassLi" onclick="$('#passType').val(1)" title="服务密码">服务密码</a>
+				<a href="javascript:void(0);" rel="#randomPassLi" onclick="$('#passType').val(2)" title="动态密码">动态密码</a>
+			</dd>
+			<dt title="服务密码">服务密码</dt>
+		</dl>
+	</li>
+	<li id="servicePassLi">
+		<label for="password">服务密码：</label>
+		<span class="bg_text"><input type="password" vld="{required:true}" maxlength="20" name="password" id="password" value="${password}" reg1="^.{6}$" desc="请输入6位服务密码" /></span>
+	</li>
+	<li id="randomPassLi" class="hidden">
+		<label for="randomPass">动态密码：</label>
+		<span class="bg_text"><input type="password" vld="{required:true}" maxlength="20" name="randomPass" id="randomPass" value="${randomPass}" reg1="^.{6}$" desc="请输入6位随机密码" /></span><span class="word"><a id="getPassword" href="javascript:void(0);">获取密码</a></span>
+	</li>
+	<li>
+		<label for="captcha">验 证 码：</label>
+		<span class="bg_text small"><input type="text" vld="{required:true}" maxlength="7" name="loginCaptcha" id="loginCaptcha" value="" reg1="^\w{6}$" desc="验证码不正确" /></span>
+		<img alt="换一张" id="loginCaptchaCode" class="code" onclick="this.src='/ecps-portal/captcha.svl?d='+new Date().getTime();" src="../../res/img/pic/code.png" /><a href="#" onclick="document.getElementById('loginCaptchaCode').src='/ecps-portal/captcha.svl?d='+new Date().getTime();" title="换一张" class="blue">换一张</a>
+	</li>
+	<li class="gray"><label>&nbsp;</label><input type="checkbox" name="">记住我的手机号码</li>
+	<li><label>&nbsp;</label><input type="button" id="loginSubmit" class="hand btn66x23" value="登 录" onclick="loginAjax('/ecps-portal/ecps/portal/item/landingAjax.do');" ><a title="忘记密码？" href="/ecps-portal/ecps/portal/getpwd/getpwd1.do">忘记密码？</a></li>
+	<!--li class="alg_c dev gray">还不是移动商城会员？<a title="免费注册" href="/ecps-portal/ecps/portal/register.do">免费注册</a></li-->
+</ul>
+
+</body>
+</html>

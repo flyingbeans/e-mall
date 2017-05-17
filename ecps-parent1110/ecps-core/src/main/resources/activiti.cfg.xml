@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+         http://www.springframework.org/schema/context
+         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+         http://www.springframework.org/schema/tx
+         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+         http://www.springframework.org/schema/aop 
+         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+         
+      <bean id="processEngineConfiguration" class="org.activiti.spring.SpringProcessEngineConfiguration">
+      	<property name="dataSource" ref="dataSource"></property>
+      	<property name="transactionManager" ref="txManager"></property>
+      	<property name="databaseSchemaUpdate" value="true"></property>
+      </bean>
+      
+      <bean id="processEngine" class="org.activiti.spring.ProcessEngineFactoryBean">
+      	<property name="processEngineConfiguration" ref="processEngineConfiguration"></property>
+      </bean>
+      
+      <bean id="repositoryService" factory-bean="processEngine" factory-method="getRepositoryService"></bean>
+      <bean id="runtimeService" factory-bean="processEngine" factory-method="getRuntimeService"></bean>
+      <bean id="taskService" factory-bean="processEngine" factory-method="getTaskService"></bean>
+      <bean id="historyService" factory-bean="processEngine" factory-method="getHistoryService"></bean>
+</beans>

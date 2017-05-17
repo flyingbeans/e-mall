@@ -1,0 +1,30 @@
+@import "nav-horizontal.css";
+div#content {
+    margin: 80px auto 20px;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    width: 780px;
+}
+div#main {
+    display: inline;
+    float: right;
+    margin: 0 20px 0 0;
+    width: 560px;
+}
+div#local {
+    display: inline;
+    float: left;
+    margin: 0 0 0 20px;
+    width: 150px;
+}
+div#sub {
+    display: none;
+}
+div#nav {
+    left: 0;
+    position: absolute;
+    text-align: left;
+    top: -30px;
+    width: 100%;
+}
